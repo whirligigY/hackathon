@@ -1,6 +1,7 @@
-import {Module} from '../core/module'
+import { Module } from "../core/module";
 
 export class ClicksModule extends Module {
+
     #numberOfClicks
     #numberOfDblClicks
 
@@ -50,4 +51,7 @@ export class ClicksModule extends Module {
             console.log(`Double Click count: ${this.#numberOfDblClicks}`);
         });
     }
+
+ 
+
 }
