@@ -16,7 +16,7 @@ export class ShapeModule extends Module {
             var context = canvas.getContext("2d")
             context.fillStyle = '#ffff'
             context.fillRect(0, 0, 300, 300)
-            var randomShape = Math.floor((Math.random() * 3) + 1)
+            var randomShape = Math.floor((Math.random() * 6) + 1)
             if (randomShape == 1) {
                 context.beginPath()
                 context.rect(60, 130, 200, 100)
@@ -36,6 +36,33 @@ export class ShapeModule extends Module {
             } else if (randomShape == 3) {
                 context.beginPath()
                 context.arc(126, 125, 70, 0, Math.PI, false)
+                context.closePath()
+                context.lineWidth = 3
+                context.fillStyle = '#0000FF'
+                context.fill()
+                context.strokeStyle = '#000'
+                context.stroke()
+            } else if (randomShape == 4) {
+                context.beginPath()
+                context.arc(196, 115, 24, 1, Math.PI, false)
+                context.closePath()
+                context.lineWidth = 3
+                context.fillStyle = 'yellow'
+                context.fill()
+                context.strokeStyle = '#000'
+                context.stroke()
+            } else if (randomShape == 5) {
+                context.beginPath()
+                context.arc(26, 15, 40, 0, Math.PI, false)
+                context.closePath()
+                context.lineWidth = 3
+                context.fillStyle = 'black'
+                context.fill()
+                context.strokeStyle = '#000'
+                context.stroke()
+            } else if (randomShape == 6) {
+                context.beginPath()
+                context.rect(126, 125, 100, 50)
                 context.closePath()
                 context.lineWidth = 3
                 context.fillStyle = '#0000FF'
