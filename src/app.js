@@ -1,4 +1,8 @@
-import "./styles.css";
+
+import './styles.css'
+//import {ClicksModule} from './modules/clicks.module'
+//const initiateClicksCalcs = new ClicksModule (Number, "30000");
+
 import { ContextMenu } from "./menu";
 
 document.body.addEventListener("contextmenu", (ev) => {
@@ -6,3 +10,4 @@ document.body.addEventListener("contextmenu", (ev) => {
   const contextmenu = new ContextMenu("#menu");
   contextmenu.open(ev);
 });
+
