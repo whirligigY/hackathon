@@ -1,4 +1,4 @@
-import {Module} from '../core/module'
+import { Module } from "../core/module";
 
 export class ShapeModule extends Module {
     constructor(type, text) {
@@ -74,3 +74,6 @@ export class ShapeModule extends Module {
 
     }
 }
+
+
+
