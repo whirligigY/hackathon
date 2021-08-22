@@ -17,6 +17,9 @@ export class BackgroundModule extends Module {
     }
     //});
   }
+  clear() {
+    document.body.style.backgroundColor = "initial";
+  }
 }
 //const newChanger = new Changer();
 //newChanger.triggle();

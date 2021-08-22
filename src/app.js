@@ -10,4 +10,3 @@ document.body.addEventListener("contextmenu", (ev) => {
   const contextmenu = new ContextMenu("#menu");
   contextmenu.open(ev);
 });
-

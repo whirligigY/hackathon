@@ -35,8 +35,9 @@ export class ClicksModule extends Module {
 
   #calculateNumberOfClicks(elementHTML) {
     elementHTML.addEventListener("click", (event) => {
-      this.#numberOfClicks += 1;
-      console.log(`Click count: ${this.#numberOfClicks}`);
+      event.target.nodeName === "LI"
+        ? (this.#numberOfClicks += 0)
+        : (this.#numberOfClicks += 1);
     });
   }
 
@@ -50,7 +51,8 @@ export class ClicksModule extends Module {
         this.#numberOfClicks >= 2
           ? this.#numberOfClicks - 2
           : this.#numberOfClicks;
-      console.log(`Double Click count: ${this.#numberOfDblClicks}`);
+      //console.log(`Double Click count: ${this.#numberOfDblClicks}`);
     });
   }
+  clear() {}
 }

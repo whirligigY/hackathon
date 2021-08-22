@@ -1,7 +1,7 @@
 import { Menu } from "./core/menu";
 import { BackgroundModule } from "./modules/background.module";
 import { ClicksModule } from "./modules/clicks.module";
-//import {ShapeModule} from "./modules/shape.module"
+import { ShapeModule } from "./modules/shape.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -23,11 +23,15 @@ export class ContextMenu extends Menu {
     this.el.classList.add("open");
     this.add(BackgroundModule, "font", "Поменять цвет");
     this.add(ClicksModule, "clicks", "Считать клики (за 3 секунды)");
+    this.add(ShapeModule, "shape", "Создать фигуру");
     this.el.addEventListener("click", (event) => {
       const { target } = event;
       if (target.nodeName === "LI") {
         this.type = target.getAttribute("data-type");
+        Object.keys(this.module).forEach((el) => this.module[el].clear());
       }
+
+      //this.module[this.type] && this.module[this.type].clear();
       this.module[this.type] && this.module[this.type].trigger();
       this.close();
     });
